@@ -6,6 +6,39 @@ html, body {
     background-size: cover;
 }
 
+@media(max-width:768px), (max-height: 414px) {
+
+    #intro p {
+        font-size: 1.2em !important;
+    }
+
+    #counter .countdown {
+        font-size: 2.0em !important;
+    }
+
+    #icons .fab {
+        margin: 10px 0 0 !important;
+        font-size: 2em;
+    }
+
+}
+
+@media(max-width:768px) {
+        
+    #logo img {
+        width: 50%;
+    }
+
+}
+
+@media(max-height: 414px) {
+
+    #logo img {
+        width: 25%;
+    }
+
+}
+
 #logo img {
     padding-top: 20px;
 }
