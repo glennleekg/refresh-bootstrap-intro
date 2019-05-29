@@ -16,3 +16,11 @@ html, body {
     font-family: 'Baloo Bhai', cursive;
     font-size: 1.8em;
 }
+
+#counter .countdown {
+    color: white;
+    text-align: center;
+    font-family: 'Stylish', sans-serif;
+    font-size: 3em;
+    margin: -15px 0 0;
+}
