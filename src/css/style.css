@@ -24,3 +24,12 @@ html, body {
     font-size: 3em;
     margin: -15px 0 0;
 }
+
+#icons {
+    text-align: center;
+}
+
+#icons .fab {
+    color: white;
+    margin: 5px 15px;
+}
