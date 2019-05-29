@@ -1,0 +1,115 @@
+<?php
+    if (isset($_POST['submit'])) {
+        $email = $_POST['email'];
+        $from = 'your-app-email@gmail.com';
+        $to = 'your-support-email@gmail.com';
+        $subject = 'Email signup';
+        $body = "Please sign me ($email) up to the mailing list";
+        
+        if (!$_POST['email']) {
+            $emailError = '<div class="text-danger"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> &nbsp;Please enter a valid email address</div>';
+        }
+        
+        if (!$emailError) {
+            if (mail ($to, $subject, $body, "From: {$from}")) {
+                $result = '<div class="text-success"><i class="fa fa-check" aria-hidden="true"></i> &nbsp;thank you we\'ll keep you updated</div>';
+            } else {
+                $result = '<div class="text-danger"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> &nbsp;sorry there has been an error, please try again</div>';
+            }
+        }   
+    }
+?>
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="fontawesome/css/all.css">
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Bhai&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Stylish&display=swap" rel="stylesheet">
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <section id="logo">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <img src="img/logo.png" class="img-fluid"/>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="intro">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <p>We're working hard, we'll be ready to launch in ...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="counter">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="countdown"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="icons">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <ul class="list-inline">
+                        <a href="http://www.twitter.com" target="blank"><li class="list-inline-item"><i class="fab twitter fa-twitter-square fa-3x"></i></li></a>
+                        <a href="http://www.facebook.com" target="blank"><li class="list-inline-item"><i class="fab facebook fa-facebook-square fa-3x"></i></li></a>
+                        <a href="http://www.google.com" target="blank"><li class="list-inline-item"><i class="fab google fa-google-plus-square fa-3x"></i></li></a>
+                        <a href="http://www.instagram.com" target="blank"><li class="list-inline-item"><i class="fab instagram fa-instagram fa-3x"></i></li></a>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="signup">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <form class="form-inline" role="form" method="post" action="#signup">
+                        <input type="email" class="form-control form-control-sm" name="email" placeholder="enter your email">
+                        <button type="submit" class="btn btn-signup btn-sm" name="submit" value="send">find out more</button>
+                    </form>
+                    <?php echo $emailError;?>
+                    <?php echo $result;?>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.countdown.min.js"></script>
+    <script>
+        $(function() {
+            $('.countdown').countdown({
+                date: "July 1, 2085 08:00:00"
+            });
+        });
+    </script>
+  </body>
+</html>
