@@ -9,3 +9,10 @@ html, body {
 #logo img {
     padding-top: 20px;
 }
+
+#intro p {
+    color: white;
+    text-align: center;
+    font-family: 'Baloo Bhai', cursive;
+    font-size: 1.8em;
+}
